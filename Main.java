@@ -28,22 +28,17 @@ class Game extends KeyAdapter {
 
         switch(ch) {
             case 'w':
-                // code block
-                // Hero.moveUp()
-
+                player.move(0, -1);
                 break;
             case 's':
-                // code block
-                // Hero.moveDown()
+                player.move(0, 1);
                 break;
             case 'a':
-                // code block
-                // Hero.moveLeft()
+                player.move(-1, 0);
                 break;
             case 'd':
-                // code block
-                // Hero.moveRight()
-                break;   
+                player.move(1, 0);
+                break;  
         }
     }
 }
