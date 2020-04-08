@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Character {
 
@@ -11,24 +14,30 @@ public class Character {
     int visionValue;
     int engineeringValue;
     int scoutingValue;
+    int[] statsValueList = {strenghtValue, visionValue, engineeringValue, scoutingValue};
     String strenght;
     String vision;
     String engineering;
     String scouting;
+    String[] statsList = {strenght, vision, engineering, scouting};
+
+
+    Map<String, Integer> statistics = new HashMap<String, Integer>();
+    statistics.put(strenght, strenghtValue);
+    statistics.put(vision, visionValue);
+    statistics.put(engineering, engineeringValue);
+    statistics.put(scouting, scoutingValue);
+    
+
+
 
 
     ArrayList<String> stats = new ArrayList<>();
-    stats.add(strenght);
-    stats.add(vision);
-    stats.add(engineering);
-    stats.add(scouting);
-
+    stats.add(statsList);
 
     ArrayList<Integer> statsValue = new ArrayList<>();
-    statsValue.add(strenghtValue);
-    statsValue.add(visionValue);
-    statsValue.add(engineeringValue);
-    statsValue.add(scoutingValue);
+    statsValue.add(statsValueList);
+
 
     ArrayList<ObjectsToPick> inventory = new ArrayList<ObjectsToPick>();
 
