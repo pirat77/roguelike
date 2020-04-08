@@ -1,5 +1,5 @@
 
-public class Npc {
+public class Npc extends Character{
     String nPCMessage;
     String solvedMessage;
     Miscallenous condition;

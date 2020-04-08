@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Character {
 
@@ -6,13 +7,32 @@ public class Character {
     Wearable weaponWorn;
     Wearable armorWorn;
     Wearable hatWorn;
+    int strenghtValue;
+    int visionValue;
+    int engineeringValue;
+    int scoutingValue;
+    String strenght;
+    String vision;
+    String engineering;
+    String scouting;
 
 
-    ArrayList<ObjectsToPick>;
+    ArrayList<String> stats = new ArrayList<String>();
+    stats.add(strenght);
+    stats.add(vision);
+    stats.add(engineering);
+    stats.add(scouting);
 
-    -stats:<int scouting, int vision, int strenght, int engineering> 
-    -special  abilites:array<ability>
-    - inventory:ArrayList<ObjectsToPick>
+
+    ArrayList<Integer> statsValue = new ArrayList<Integer>();
+    statsValue.add(strenghtValue);
+    statsValue.add(visionValue);
+    statsValue.add(engineeringValue);
+    statsValue.add(scoutingValue);
+
+    ArrayList<ObjectsToPick> inventory = new ArrayList<ObjectsToPick>();
+
+    ArrayList<ability> abilities = new ArrayList<ability>();
 
 
 
@@ -29,33 +49,37 @@ public class Character {
 
     }
 
-    private void ability(){
-
-    }
-
     private int getStrenght(){
+        return
 
     }
+
     private int getScouting(){
+        return
 
     }
+
     private int getVision(){
+        return
 
     }
+
     private int getEngneering(){
-        
-    }
-    private void setStrenght(){
-        
-    }
-    private void setVision(){
-        
-    }
-    private void setScouting(){
+        return 
         
     }
 
-    private void setEnginnering(){
+    private void setStrenght(int){
+        
+    }
+    private void setVision(int){
+        
+    }
+    private void setScouting(int){
+        
+    }
+
+    private void setEnginnering(int){
         
     }
 
@@ -72,6 +96,10 @@ public class Character {
     }
 
     private void inspectItem(miscallenous){
+
+    }
+
+    private void ability(){
 
     }
 
