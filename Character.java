@@ -17,14 +17,14 @@ public class Character {
     String scouting;
 
 
-    ArrayList<String> stats = new ArrayList<String>();
+    ArrayList<String> stats = new ArrayList<>();
     stats.add(strenght);
     stats.add(vision);
     stats.add(engineering);
     stats.add(scouting);
 
 
-    ArrayList<Integer> statsValue = new ArrayList<Integer>();
+    ArrayList<Integer> statsValue = new ArrayList<>();
     statsValue.add(strenghtValue);
     statsValue.add(visionValue);
     statsValue.add(engineeringValue);
