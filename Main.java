@@ -24,20 +24,20 @@ class Game extends KeyAdapter {
 
         char ch = event.getKeyChar();
 
-        System.out.println((int)ch);
+        //System.out.println((int)ch);
 
         switch(ch) {
             case 'w':
-                player.move(0, -1);
+                System.out.println("blabla1");
                 break;
             case 's':
-                player.move(0, 1);
+                System.out.println("blabla2");;
                 break;
             case 'a':
-                player.move(-1, 0);
+                System.out.println("blabla3");
                 break;
             case 'd':
-                player.move(1, 0);
+                System.out.println("blabla4");
                 break;  
         }
     }

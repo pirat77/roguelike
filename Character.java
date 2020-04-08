@@ -10,33 +10,25 @@ public class Character {
     Wearable weaponWorn;
     Wearable armorWorn;
     Wearable hatWorn;
-    int strenghtValue;
-    int visionValue;
-    int engineeringValue;
-    int scoutingValue;
-    int[] statsValueList = {strenghtValue, visionValue, engineeringValue, scoutingValue};
+    Integer strenghtValue;
+    Integer visionValue;
+    Integer engineeringValue;
+    Integer scoutingValue;
     String strenght;
     String vision;
     String engineering;
     String scouting;
-    String[] statsList = {strenght, vision, engineering, scouting};
-
 
     Map<String, Integer> statistics = new HashMap<String, Integer>();
-    statistics.put(strenght, strenghtValue);
-    statistics.put(vision, visionValue);
-    statistics.put(engineering, engineeringValue);
-    statistics.put(scouting, scoutingValue);
-    
 
+    public Character(){
 
+        statistics.put(strenght, strenghtValue);
+        statistics.put(vision, visionValue);
+        statistics.put(engineering, engineeringValue);
+        statistics.put(scouting, scoutingValue);
 
-
-    ArrayList<String> stats = new ArrayList<>();
-    stats.add(statsList);
-
-    ArrayList<Integer> statsValue = new ArrayList<>();
-    statsValue.add(statsValueList);
+    }
 
 
     ArrayList<ObjectsToPick> inventory = new ArrayList<ObjectsToPick>();
@@ -109,6 +101,7 @@ public class Character {
     }
 
     private void ability(){
+        
 
     }
 

@@ -6,4 +6,8 @@ public class Npc extends Character{
     ObjectToPick bonus;
     int bonusEXP;
 
+    private void trade(){
+        
+    }
+
 }
