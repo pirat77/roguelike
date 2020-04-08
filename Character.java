@@ -20,14 +20,15 @@ public class Character {
     String engineering;
     String scouting;
     String[] statsList = {strenght, vision, engineering, scouting};
-
-
     Map<String, Integer> statistics = new HashMap<String, Integer>();
-    statistics.put(strenght, strenghtValue);
-    statistics.put(vision, visionValue);
-    statistics.put(engineering, engineeringValue);
-    statistics.put(scouting, scoutingValue);
-    
+
+
+    Character(){
+        statistics.put(strenght, strenghtValue);
+        statistics.put(vision, visionValue);
+        statistics.put(engineering, engineeringValue);
+        statistics.put(scouting, scoutingValue);
+    }
 
 
 
