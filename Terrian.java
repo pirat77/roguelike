@@ -3,9 +3,18 @@ public class Terrian{
 
     private String name;
     private String flavorTxt;
+    private boolean canPass;
+
+    public Element(String name, String flavorTxt, boolean canPass) {
+        
+        this.isMoveable = isMoveable;
+    }
     
     public void explore(){
     
+    }
+    public Boolean getCanPass(){
+        return this.canPass;
     }
     
     public String getName(){
