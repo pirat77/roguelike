@@ -4,7 +4,12 @@ import java.awt.event.KeyEvent;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
+        Board board = new Board();
+        Character player = new Character();
+
         JTextField textField = new JTextField();
 
         textField.addKeyListener(new Game());
@@ -13,32 +18,31 @@ public class Main {
         jframe.add(textField);
         jframe.setSize(100, 100);
         jframe.setVisible(true);
+            
     }
 }
 
-
 class Game extends KeyAdapter {
-    
+
     @Override
     public void keyPressed(KeyEvent event) {
 
         char ch = event.getKeyChar();
 
-        //System.out.println((int)ch);
 
         switch(ch) {
             case 'w':
-                System.out.println("blabla1");
+                System.out.println("@");
                 break;
             case 's':
-                System.out.println("blabla2");;
+                System.out.println("#");
                 break;
             case 'a':
-                System.out.println("blabla3");
+                System.out.println("%");
                 break;
             case 'd':
-                System.out.println("blabla4");
-                break;  
+                System.out.println("*");
+                break;
         }
     }
 }
