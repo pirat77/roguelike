@@ -6,8 +6,9 @@ public class Terrian{
     private boolean canPass;
 
     public Element(String name, String flavorTxt, boolean canPass) {
-        
-        this.isMoveable = isMoveable;
+        this.name = name;
+        this.flavorTxt = flavorTxt;
+        this.canPass = canPass;
     }
     
     public void explore(){
