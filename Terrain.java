@@ -1,5 +1,5 @@
 
-public class Terrian{
+public class Terrain{
 
     private String name;
     private String flavorTxt;
