@@ -21,7 +21,8 @@ public class Character {
     String scouting;
     String[] statsList = {strenght, vision, engineering, scouting};
     Map<String, Integer> statistics = new HashMap<String, Integer>();
-
+    ArrayList<ObjectToPick> inventory = new ArrayList<ObjectToPick>();
+    ArrayList<ability> abilities = new ArrayList<ability>();
 
     Character(){
         statistics.put(strenght, strenghtValue);
@@ -33,79 +34,57 @@ public class Character {
 
 
 
-    ArrayList<String> stats = new ArrayList<>();
-    stats.add(statsList);
-
-    ArrayList<Integer> statsValue = new ArrayList<>();
-    statsValue.add(statsValueList);
-
-
-    ArrayList<ObjectsToPick> inventory = new ArrayList<ObjectsToPick>();
-
-    ArrayList<ability> abilities = new ArrayList<ability>();
+    
 
 
 
-
-    private void wearItem(weareable){
+    public void wearItem(Wearable item){
 
     }
 
-    private void consumeItem(consumable){
+    public void consumeItem(Consumable item){
 
     }
 
-    private void inspectItem(miscellenous){
+    public void inspectItem(Miscallenous item){
 
     }
 
-    private int getStrenght(){
-        return
+    public int getStrenght(){
+        return this.strenghtValue;
 
     }
 
-    private int getScouting(){
-        return
+    public int getScouting(){
+        return this.scoutingValue;
 
     }
 
-    private int getVision(){
-        return
+    public int getVision(){
+        return this.visionValue;
 
     }
 
-    private int getEngneering(){
-        return 
+    public int getEngneering(){
+        return this.engineeringValue;
         
     }
 
-    private void setStrenght(int){
+    public void setStrenght(int change){
         
     }
-    private void setVision(int){
+    public void setVision(int change){
         
     }
-    private void setScouting(int){
-        
-    }
-
-    private void setEnginnering(int){
+    public void setScouting(int change){
         
     }
 
-    private void wearItem(wearable){
-
+    public void setEnginnering(int change){
+        
     }
 
-    private void unWearItem(wearable){
-
-    }
-
-    private void consumeItem(consumable){
-
-    }
-
-    private void inspectItem(miscallenous){
+    public void unWearItem(Wearable item){
 
     }
 
