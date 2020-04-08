@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Character {
@@ -30,13 +29,6 @@ public class Character {
         statistics.put(engineering, engineeringValue);
         statistics.put(scouting, scoutingValue);
     }
-
-
-
-
-    
-
-
 
     public void wearItem(Wearable item){
 
