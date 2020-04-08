@@ -8,4 +8,9 @@ public class ObjectToPick extends Entity{
     public void throwObject(){
         
     }
+
+    public boolean isInstance(Class<ObjectToPick> class1) {
+		return true;
+	}
+
 }

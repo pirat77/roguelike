@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 public class UserInterface {
 
+    static void readBoard(Board map){         
+        
+        for(int i = 0; i<map.LEN; i++){
+            for(int j = 0; j<map.LEN; j++){
+                System.out.print(map.map[j][i].getSymbol());
+            }
+            System.out.print("\n");
+        }
+    }    
+
     Map<String, Integer> menuOptions = new HashMap<String, Integer>();
 
     public void fillMapWithOptions() {

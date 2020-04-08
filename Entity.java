@@ -22,9 +22,15 @@ public abstract class Entity{
         return this.y;
     }
 
+    public void setSymbol(char symbol){
+        this.symbol = symbol;
+    }
+
     public char getSymbol(){
         return this.symbol;
     }
+
+
 
 }
 

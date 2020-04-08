@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Character {
+public class Character extends Entity {
 
     int lives;
     int damage;
@@ -13,6 +13,7 @@ public class Character {
     Integer visionValue;
     Integer engineeringValue;
     Integer scoutingValue;
+    int ammo;
     String strenght;
     String vision;
     String engineering;
@@ -23,6 +24,10 @@ public class Character {
     ArrayList<ability> abilities = new ArrayList<ability>();
 
     Character(){
+        this.lives = 5;
+        this.ammo = 5;
+        this.name = "character";
+        this.setSymbol('@');
         statistics.put(strenght, strenghtValue);
         statistics.put(vision, visionValue);
         statistics.put(engineering, engineeringValue);
@@ -83,6 +88,10 @@ public class Character {
         
 
     }
+
+    public boolean isInstance(Class<Character> class1) {
+		return true;
+	}
 
 
 }

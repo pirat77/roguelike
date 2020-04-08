@@ -1,11 +1,11 @@
 
-public class Terrain{
+public class Terrain extends Entity{
 
     private String name;
     private String flavorTxt;
     private boolean canPass;
 
-    public Element(String name, String flavorTxt, boolean canPass) {
+    public void Element(String name, String flavorTxt, boolean canPass) {
         this.name = name;
         this.flavorTxt = flavorTxt;
         this.canPass = canPass;

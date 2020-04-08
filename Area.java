@@ -5,14 +5,16 @@ public class Area {
     ArrayList<Entity> entityList;
 
     Area(){        
-        this.wasVisited = true;
+        this.wasVisited = false;
         this.entityList = new ArrayList<Entity>();
     }
 
-    public static char getSymbol(ArrayList<Entity> entityList){
-        for (Entity entity : entityList){ if (entity.isInstance(Character)) {return entity.getSymbol();}}            
-        for (Entity entity : entityList){ if (entity.isInstance(ObjectToPick)) {return entity.getSymbol();}}
-        for (Entity entity : entityList){ if (entity.isInstance(Terrain)) {return entity.getSymbol();}}
+    public char getSymbol(){
+        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Character") {return entity.getSymbol();}}            
+        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "ObjectToPick") {return entity.getSymbol();}}
+        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Terrain") {return entity.getSymbol();
+            }
+        }
         return '.';
     }
 
