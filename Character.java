@@ -9,11 +9,10 @@ public class Character {
     Wearable weaponWorn;
     Wearable armorWorn;
     Wearable hatWorn;
-    int strenghtValue;
-    int visionValue;
-    int engineeringValue;
-    int scoutingValue;
-    int[] statsValueList = {strenghtValue, visionValue, engineeringValue, scoutingValue};
+    Integer strenghtValue;
+    Integer visionValue;
+    Integer engineeringValue;
+    Integer scoutingValue;
     String strenght;
     String vision;
     String engineering;
@@ -81,6 +80,7 @@ public class Character {
     }
 
     private void ability(){
+        
 
     }
 
