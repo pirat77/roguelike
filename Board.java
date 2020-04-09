@@ -37,7 +37,15 @@ public class Board {
         genPath(board, board.LEN/2, 0, wall);
         genPath(board, 0, board.LEN/2, wall);
         genPath(board, board.LEN-1, board.LEN/2, wall);
-        genPath(board, board.LEN/2, board.LEN-1, wall);       
+        genPath(board, board.LEN/2, board.LEN-1, wall);
+        while (true){
+            int x = generator.nextInt(board.LEN-1);
+            int y = generator.nextInt(board.LEN-1);
+            if (board.map[x][y].entityList.size() == 0){
+                board.map[x][y].entityList.add(new Miscallenous());
+                break;
+            }
+        }       
     }
 
     static void generateEnemys(Board board){
