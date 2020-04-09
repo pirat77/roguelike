@@ -4,7 +4,7 @@ public class Enemy extends Character{
     Enemy() {
         this.lives =1;
         this.name ="enemy";
-        this.visionValue=5;
+        this.visionValue=7;
         this.setSymbol('&');
     }
 }

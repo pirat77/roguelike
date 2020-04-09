@@ -64,12 +64,12 @@ public class Main {
         }
 
         private static void processTurn(){
-            for (Enemy enemy : Board.enemys) {
-                enemyMove(enemy);
-                
-            }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
+            for (Enemy enemy : Board.enemys) {
+                enemyMove(enemy);
+                System.out.println("Enemy x = " + enemy.getX() + " Enemy y = " + enemy.getY());               
+            }
             System.out.println("Life toal = " + player.lives);  
             System.out.println("Ammo = " + player.ammo);          
         }
@@ -77,14 +77,15 @@ public class Main {
 
 
         private static void enemyMove(Enemy enemy){
-            if ((Math.abs(player.getX()-enemy.getX()) <= enemy.visionValue) && (Math.abs(player.getY()-enemy.getY())<=enemy.visionValue)){
+            if ((Math.abs(player.getX()-enemy.getX()) <= enemy.visionValue) && (Math.abs(player.getY()-enemy.getY()) <= enemy.visionValue)){
                 board.map[enemy.getX()][enemy.getY()].entityList.remove(enemy);
                 if (player.getY() > enemy.getY()){
-                    enemy.setCoordinates(enemy.getY()-1, enemy.getX());
-                }
-                else{
                     enemy.setCoordinates(enemy.getY()+1, enemy.getX());
                 }
+                else{
+                    enemy.setCoordinates(enemy.getY()-1, enemy.getX());
+                }
+
                 if (player.getX() > enemy.getX()){
                     enemy.setCoordinates(enemy.getY(), enemy.getX()+1);
                 }
