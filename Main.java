@@ -63,12 +63,36 @@ public class Main {
             return result;
         }
 
-        private void processTurn(){
+        private static void processTurn(){
+            for (Enemy enemy : Board.enemys) {
+                enemyMove(enemy);
+                
+            }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
             System.out.println("Life toal = " + player.lives);  
             System.out.println("Ammo = " + player.ammo);          
         }
+
+
+
+        private static void enemyMove(Enemy enemy){
+            if ((Math.abs(player.getX()-enemy.getX()) <= enemy.visionValue) && (Math.abs(player.getY()-enemy.getY())<=enemy.visionValue)){
+                if (player.getY() > enemy.getY()){
+                    enemy.setCoordinates(enemy.getY()+1, enemy.getX());
+                }
+                else{
+                    enemy.setCoordinates(enemy.getY()-1, enemy.getX());
+                }
+                if (player.getX() > enemy.getX()){
+                    enemy.setCoordinates(enemy.getY(), enemy.getX()-1);
+                }
+                else{
+                    enemy.setCoordinates(enemy.getY(), enemy.getX()+1);
+                }
+            }
+        }
+
 
     }
 
