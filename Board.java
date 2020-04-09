@@ -60,7 +60,7 @@ public class Board {
 
     static void genPath(Board board, int x, int y, Terrain wall){
         if (board.map[x][y].entityList.size()>0){
-            board.map[x][y].entityList.remove(wall);
+            board.map[x][y].entityList.removeAll(board.map[x][y].entityList);
         }
 
         int caseof = generator.nextInt(8);
