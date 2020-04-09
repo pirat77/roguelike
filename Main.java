@@ -139,6 +139,9 @@ public class Main {
                     }
                 }               
             }
+            if (board.map[player.getX()][player.getY()].entityList.contains(new Miscallenous())){
+                
+            }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
             

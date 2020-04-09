@@ -1,4 +1,7 @@
 
-public class Miscallenous {
+public class Miscallenous extends ObjectToPick {
+    Miscallenous(){
+        this.setSymbol('$');
+    }
 
 }
