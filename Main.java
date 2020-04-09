@@ -172,11 +172,11 @@ public class Main {
                 }               
             }
             if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Wearable){
-                player.ammo += 3;
+                player.ammo += 2;
                 board.map[player.getX()][player.getY()].entityList.remove(board.map[player.getX()][player.getY()].entityList.get(0));
             }
             if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Consumable){
-                player.lives = 5;
+                player.lives += 1;
                 board.map[player.getX()][player.getY()].entityList.remove(board.map[player.getX()][player.getY()].entityList.get(0));
             }
             if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Miscallenous){
