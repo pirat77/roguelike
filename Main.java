@@ -126,9 +126,11 @@ public class Main {
                     }
                 }               
             }
-            if (board.map[player.getX()][player.getY()].entityList.contains(new Miscallenous())){
+            if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Miscallenous){
+                board.map[player.getX()][player.getY()].entityList.remove(player);
                 Board.generateBoard(board);
                 player.setCoordinates(board.LEN/2, board.LEN/2);
+                (board.map[player.getX()][player.getY()]).entityList.add(player);
             }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
