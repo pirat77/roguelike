@@ -79,19 +79,10 @@ public class Main {
         private static void enemyMove(Enemy enemy){
             if ((Math.abs(player.getX()-enemy.getX()) <= enemy.visionValue) && (Math.abs(player.getY()-enemy.getY()) <= enemy.visionValue)){
                 board.map[enemy.getX()][enemy.getY()].entityList.remove(enemy);
-                if (player.getY() > enemy.getY()){
-                    enemy.setCoordinates(enemy.getY()+1, enemy.getX());
-                }
-                else{
-                    enemy.setCoordinates(enemy.getY()-1, enemy.getX());
-                }
-
-                if (player.getX() > enemy.getX()){
-                    enemy.setCoordinates(enemy.getY(), enemy.getX()+1);
-                }
-                else{
-                    enemy.setCoordinates(enemy.getY(), enemy.getX()-1);
-                }
+                if (player.getY() > enemy.getY()) enemy.setCoordinates(enemy.getY()+1, enemy.getX());
+                if (player.getY() < enemy.getY()) enemy.setCoordinates(enemy.getY()-1, enemy.getX());
+                if (player.getX() > enemy.getX()) enemy.setCoordinates(enemy.getY(), enemy.getX()+1);
+                if (player.getX() > enemy.getX()) enemy.setCoordinates(enemy.getY(), enemy.getX()-1);
                 (board.map[enemy.getX()][enemy.getY()]).entityList.add(enemy);    
             }
         }
