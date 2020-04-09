@@ -26,6 +26,10 @@ public abstract class Entity{
         this.symbol = symbol;
     }
 
+    public boolean getCanPass(){
+        return true;
+    }
+
     public char getSymbol(){
         return this.symbol;
     }

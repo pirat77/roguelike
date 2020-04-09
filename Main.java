@@ -9,6 +9,7 @@ public class Main {
         @Override
         public void keyPressed(KeyEvent event) {
     
+
             char ch = event.getKeyChar();
     
             board.map[player.getX()][player.getY()].entityList.remove(player);
@@ -16,19 +17,19 @@ public class Main {
 
             switch(ch) {
                 case 'w':
-                    if (!contains(borders, player.getY()-1)) player.setCoordinates(player.getX(), player.getY()-1);
+                    if (!contains(borders, player.getY()-1) && board.map[player.getX()][player.getY()-1].isPenetrable()) player.setCoordinates(player.getX(), player.getY()-1);
                     player.setSymbol('^');
                     break;
                 case 's':
-                    if (!contains(borders, player.getY()+1)) player.setCoordinates(player.getX(), player.getY()+1);
+                    if (!contains(borders, player.getY()+1) && board.map[player.getX()][player.getY()+1].isPenetrable()) player.setCoordinates(player.getX(), player.getY()+1);
                     player.setSymbol('v');
                     break;
                 case 'a': 
-                    if (!contains(borders, player.getX()-1)) player.setCoordinates(player.getX()-1, player.getY());
+                    if (!contains(borders, player.getX()-1) && board.map[player.getX()-1][player.getY()].isPenetrable()) player.setCoordinates(player.getX()-1, player.getY());
                     player.setSymbol('<');
                     break;
                 case 'd':                    
-                    if (!contains(borders, player.getX()+1)) player.setCoordinates(player.getX()+1, player.getY());
+                    if (!contains(borders, player.getX()+1) && board.map[player.getX()+1][player.getY()].isPenetrable()) player.setCoordinates(player.getX()+1, player.getY());
                     player.setSymbol('>');
                     break;
                 case 'p':
@@ -37,6 +38,7 @@ public class Main {
                 case '`':
                     System.exit(0);
             }
+            
             (board.map[player.getX()][player.getY()]).entityList.add(player);
             processTurn();
 
@@ -74,9 +76,14 @@ public class Main {
     static Board board = new Board();
 
     public static void main(String[] args) {
-        player.setCoordinates(7, 3);
+        player.setCoordinates(7, 7);
+        Board.generateBoard(board);
         (board.map[player.getX()][player.getY()]).entityList.add(player);
+        UserInterface.clearScreen();
         UserInterface.readBoard(board);
+        System.out.println("Life toal = " + player.lives);  
+        System.out.println("Ammo = " + player.ammo);  
+
 
         JTextField textField = new JTextField();
         

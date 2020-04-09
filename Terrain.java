@@ -14,10 +14,14 @@ public class Terrain extends Entity{
     public void explore(){
     
     }
-    public Boolean getCanPass(){
+    public boolean getCanPass(){
         return this.canPass;
     }
     
+    public void setCanPass(boolean can){
+        this.canPass = can;
+    }
+
     public String getName(){
         return this.name;
     }
