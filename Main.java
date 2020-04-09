@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 
 public class Main {
 
@@ -64,12 +65,17 @@ public class Main {
         }
 
         private static void processTurn(){
+            for (int i = 0; i<5; i++) {
+                try{enemyMove(Board.enemys[i]);} catch (NullPointerException e) {continue;};
+                if (Board.enemys[i].getX()==player.getX() && Board.enemys[i].getY() == player.getY()){
+                    player.looseLife();
+                    board.map[Board.enemys[i].getX()][Board.enemys[i].getY()].entityList.remove(Board.enemys[i]);
+                    Board.enemys[i] = null;
+                }               
+            }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
-            for (Enemy enemy : Board.enemys) {
-                enemyMove(enemy);
-                System.out.println("Enemy x = " + enemy.getX() + " Enemy y = " + enemy.getY());               
-            }
+            
             System.out.println("Life toal = " + player.lives);  
             System.out.println("Ammo = " + player.ammo);          
         }

@@ -34,6 +34,10 @@ public class Character extends Entity {
         statistics.put(scouting, scoutingValue);
     }
 
+    public void looseLife(){
+        this.lives -= 1;
+    }
+
     public void wearItem(Wearable item){
 
     }
