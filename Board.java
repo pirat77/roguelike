@@ -4,7 +4,7 @@ public class Board {
 
     static Random generator = new Random();
 
-    int LEN=20;
+    int LEN=30;
     Area[][] map;
 
     Board(){
@@ -30,11 +30,11 @@ public class Board {
         genPath(board, board.LEN-1, board.LEN-1, wall);
         genPath(board, 0, board.LEN-1, wall);
         genPath(board, board.LEN-1, 0, wall);
-        genPath(board, 7, 7, wall); 
-        genPath(board, 7, 0, wall);
-        genPath(board, 0, 7, wall);
-        genPath(board, board.LEN-1, 7, wall);
-        genPath(board, 7, board.LEN-1, wall);       
+        genPath(board, board.LEN/2, board.LEN/2, wall); 
+        genPath(board, board.LEN/2, 0, wall);
+        genPath(board, 0, board.LEN/2, wall);
+        genPath(board, board.LEN-1, board.LEN/2, wall);
+        genPath(board, board.LEN/2, board.LEN-1, wall);       
     }
 
     static void genPath(Board board, int x, int y, Terrain wall){

@@ -76,8 +76,8 @@ public class Main {
     static Board board = new Board();
 
     public static void main(String[] args) {
-        player.setCoordinates(7, 7);
         Board.generateBoard(board);
+        player.setCoordinates(board.LEN/2, board.LEN/2);
         (board.map[player.getX()][player.getY()]).entityList.add(player);
         UserInterface.clearScreen();
         UserInterface.readBoard(board);
