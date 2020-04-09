@@ -49,7 +49,7 @@ public class Board {
         if (caseof==6) try {genPath(board, x-1, y, wall);}  catch (ArrayIndexOutOfBoundsException e) {genPath(board, x, y, wall);};
         if (caseof==5) try {genPath(board, x, y+1, wall);}  catch (ArrayIndexOutOfBoundsException e) {genPath(board, x, y, wall);};
         if (caseof==4) try {genPath(board, x, y-1, wall);}  catch (ArrayIndexOutOfBoundsException e) {genPath(board, x, y, wall);};
-        if (caseof==3) try {genPath(board, x-1, y-1, wall);}  catch (ArrayIndexOutOfBoundsException e) {};
+        if (caseof==3) try {genPath(board, x-1, y-1, wall);}  catch (ArrayIndexOutOfBoundsException e) {genPath(board, x, y, wall);};
         if (caseof==2) try {genPath(board, x+1, y-1, wall);}  catch (ArrayIndexOutOfBoundsException e) {}; 
 
     }
