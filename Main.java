@@ -37,7 +37,7 @@ public class Main {
                     shoot();
                     break;
                 case '`':
-                    System.exit(0);
+                    UserInterface.quitGame();
             }
             
             (board.map[player.getX()][player.getY()]).entityList.add(player);
@@ -48,7 +48,40 @@ public class Main {
 
         void shoot(){
             player.ammo-=1;
+            if (player.getSymbol() == '>'){
+                int x = player.getX()+1;
+                while (x < board.LEN){
+                    board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
+                    x++;
+                }
+            }
+
+            if (player.getSymbol() == '<'){
+                int x = player.getX()-1;
+                while (x >= 0){
+                    board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
+                    x--;
+                }
+            }    
+            if (player.getSymbol() == 'v'){
+                int y = player.getY()-1;
+                while (y >= 0){
+                    board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
+                    y--;
+                }    
+            }
+
+            if (player.getSymbol() == '^'){
+                int y = player.getY()+1;
+                while (y < board.LEN){
+                    board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
+                    y++;
+                }    
+            }
+            
+
         }
+    
 
         public static boolean contains(final int[] array, final int v) {
 
@@ -71,6 +104,10 @@ public class Main {
                     player.looseLife();
                     board.map[Board.enemys[i].getX()][Board.enemys[i].getY()].entityList.remove(Board.enemys[i]);
                     Board.enemys[i] = null;
+                    if (player.lives == 0) {
+                        UserInterface.endgameScreen();
+                        UserInterface.quitGame();
+                    }
                 }               
             }
             UserInterface.clearScreen();
