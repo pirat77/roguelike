@@ -1,4 +1,6 @@
 
-public class Wearable {
-
+public class Wearable extends ObjectToPick{
+    Wearable(){
+        this.setSymbol('%');
+    }
 }

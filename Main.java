@@ -171,6 +171,8 @@ public class Main {
                     }
                 }               
             }
+            if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Wearable) player.ammo += 3;
+            if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Consumable) player.lives = 5;
             if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Miscallenous){
                 board.map[player.getX()][player.getY()].entityList.remove(player);
                 Board.generateBoard(board);

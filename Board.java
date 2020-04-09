@@ -38,7 +38,9 @@ public class Board {
         genPath(board, 0, board.LEN/2, wall);
         genPath(board, board.LEN-1, board.LEN/2, wall);
         genPath(board, board.LEN/2, board.LEN-1, wall);
-        
+
+        board.map[generator.nextInt(board.LEN-1)][generator.nextInt(board.LEN-1)].entityList.add(new Consumable());
+        board.map[generator.nextInt(board.LEN-1)][generator.nextInt(board.LEN-1)].entityList.add(new Wearable());
         while (true){
             int x = generator.nextInt(board.LEN-1);
             int y = generator.nextInt(board.LEN-1);
