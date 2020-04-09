@@ -63,7 +63,8 @@ public class Main {
                     x--;
                 }
             }    
-            if (player.getSymbol() == 'v'){
+
+            if (player.getSymbol() == '^'){
                 int y = player.getY()-1;
                 while (y >= 0){
                     board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
@@ -71,7 +72,7 @@ public class Main {
                 }    
             }
 
-            if (player.getSymbol() == '^'){
+            if (player.getSymbol() == 'v'){
                 int y = player.getY()+1;
                 while (y < board.LEN){
                     board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
