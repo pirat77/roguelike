@@ -6,6 +6,7 @@ public class Board {
 
     int LEN=30;
     Area[][] map;
+    static Enemy[] enemys = new Enemy[5];
 
     Board(){
         this.map = new Area[LEN][LEN];
@@ -26,6 +27,8 @@ public class Board {
                 board.map[i][j].entityList.add(wall);
             }
         }    
+        generateEnemys(board);
+        
         genPath(board, 0, 0, wall);
         genPath(board, board.LEN-1, board.LEN-1, wall);
         genPath(board, 0, board.LEN-1, wall);
@@ -35,6 +38,16 @@ public class Board {
         genPath(board, 0, board.LEN/2, wall);
         genPath(board, board.LEN-1, board.LEN/2, wall);
         genPath(board, board.LEN/2, board.LEN-1, wall);       
+    }
+
+    static void generateEnemys(Board board){
+        for (int i = 0; i<5; i++){
+            int x = generator.nextInt(board.LEN);
+            int y = generator.nextInt(board.LEN);
+            enemys[i] = new Enemy();
+            enemys[i].setCoordinates(x, y);
+            board.map[x][y].entityList.add(enemys[i]);
+        }
     }
 
     static void genPath(Board board, int x, int y, Terrain wall){
