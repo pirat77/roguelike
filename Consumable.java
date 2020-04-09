@@ -1,5 +1,5 @@
 
-public class Consumable extends Entity {
+public class Consumable extends ObjectToPick {
     Consumable(){
         this.setSymbol('*');
     }

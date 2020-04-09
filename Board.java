@@ -39,17 +39,21 @@ public class Board {
         genPath(board, board.LEN-1, board.LEN/2, wall);
         genPath(board, board.LEN/2, board.LEN-1, wall);
 
-        board.map[generator.nextInt(board.LEN-1)][generator.nextInt(board.LEN-1)].entityList.add(new Consumable());
-        board.map[generator.nextInt(board.LEN-1)][generator.nextInt(board.LEN-1)].entityList.add(new Wearable());
-        while (true){
-            int x = generator.nextInt(board.LEN-1);
-            int y = generator.nextInt(board.LEN-1);
-            if (board.map[x][y].entityList.size() == 0){
-                board.map[x][y].entityList.add(new Miscallenous());
-                break;
-            }
-        }       
+        airdrop(new Consumable(), board);
+        airdrop(new Wearable(), board);
+        airdrop(new Miscallenous(), board);
     }
+
+        static void airdrop(ObjectToPick item, Board board){
+            while (true){
+                int x = generator.nextInt(board.LEN-1);
+                int y = generator.nextInt(board.LEN-1);
+                if (board.map[x][y].entityList.size() == 0){
+                    board.map[x][y].entityList.add(item);
+                    break;
+                }
+            }       
+        }
 
     static void generateEnemys(Board board){
         for (int i = 0; i<5; i++){
