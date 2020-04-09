@@ -38,6 +38,7 @@ public class Board {
         genPath(board, 0, board.LEN/2, wall);
         genPath(board, board.LEN-1, board.LEN/2, wall);
         genPath(board, board.LEN/2, board.LEN-1, wall);
+        
         while (true){
             int x = generator.nextInt(board.LEN-1);
             int y = generator.nextInt(board.LEN-1);

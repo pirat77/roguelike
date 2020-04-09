@@ -1,4 +1,6 @@
 
-public class Consumable {
-
+public class Consumable extends Entity {
+    Consumable(){
+        this.setSymbol('*');
+    }
 }
