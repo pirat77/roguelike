@@ -96,7 +96,7 @@ public class Main {
                     y++;
                 }    
             }
-            
+        }
     
 
         public static boolean contains(final int[] array, final int v) {
