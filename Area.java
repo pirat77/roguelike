@@ -16,7 +16,8 @@ public class Area {
 
     public char getSymbol(){
         for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Character") {return entity.getSymbol();}}
-        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Enemy") {return entity.getSymbol();}}            
+        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Enemy") {return entity.getSymbol();}}       
+        for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Miscallenous") {return entity.getSymbol();}}     
         for (Entity entity : this.entityList){ if (entity.getClass().getName() == "ObjectToPick") {return entity.getSymbol();}}
         for (Entity entity : this.entityList){ if (entity.getClass().getName() == "Terrain") {return entity.getSymbol();}}
         return '.';

@@ -127,7 +127,8 @@ public class Main {
                 }               
             }
             if (board.map[player.getX()][player.getY()].entityList.contains(new Miscallenous())){
-                
+                Board.generateBoard(board);
+                player.setCoordinates(board.LEN/2, board.LEN/2);
             }
             UserInterface.clearScreen();
             UserInterface.readBoard(board);
