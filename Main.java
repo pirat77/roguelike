@@ -50,7 +50,14 @@ public class Main {
             player.ammo-=1;
             if (player.getSymbol() == '>'){
                 int x = player.getX()+1;
-                while (x < board.LEN){
+                while (x < board.LEN){                    
+                    for (int i = 0; i<5; i++){
+                        try {
+                            if (Board.enemys[i].getX() == x && Board.enemys[i].getY()==player.getY()){
+                                Board.enemys[i]=null;
+                            }
+                        } catch (NullPointerException e) {continue;}   
+                    }
                     board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
                     x++;
                 }
@@ -59,6 +66,13 @@ public class Main {
             if (player.getSymbol() == '<'){
                 int x = player.getX()-1;
                 while (x >= 0){
+                    for (int i = 0; i<5; i++){
+                        try {
+                            if (Board.enemys[i].getX() == x && Board.enemys[i].getY()==player.getY()){
+                                Board.enemys[i]=null;
+                            }
+                        } catch (NullPointerException e) {continue;}   
+                    }
                     board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
                     x--;
                 }
@@ -67,6 +81,13 @@ public class Main {
             if (player.getSymbol() == '^'){
                 int y = player.getY()-1;
                 while (y >= 0){
+                    for (int i = 0; i<5; i++){
+                        try {
+                            if (Board.enemys[i].getX() == player.getX() && Board.enemys[i].getY()==y){
+                                Board.enemys[i]=null;
+                            }
+                        } catch (NullPointerException e) {continue;}
+                    }
                     board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
                     y--;
                 }    
@@ -75,6 +96,13 @@ public class Main {
             if (player.getSymbol() == 'v'){
                 int y = player.getY()+1;
                 while (y < board.LEN){
+                    for (int i = 0; i<5; i++){
+                        try {
+                            if (Board.enemys[i].getX() == player.getX() && Board.enemys[i].getY()==y){
+                                Board.enemys[i]=null;
+                            }
+                        } catch (NullPointerException e) {continue;}
+                    }
                     board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
                     y++;
                 }    
