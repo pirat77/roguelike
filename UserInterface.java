@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    static void readBoard(Board map){         
+    static void readBoard(Board map, int vision, int x, int y){         
         
         for(int i = 0; i<map.LEN; i++){
             for(int j = 0; j<map.LEN; j++){
-                System.out.print(map.map[j][i].getSymbol());
+                if (Math.abs(x-j)<=vision && Math.abs(y-i)<=vision){
+                    System.out.print(map.map[j][i].getSymbol());
+                }
             }
             System.out.print("\n");
         }

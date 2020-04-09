@@ -26,6 +26,7 @@ public class Character extends Entity {
     Character(){
         this.lives = 5;
         this.ammo = 5;
+        this.visionValue = 7;
         this.name = "character";
         this.setSymbol('@');
         statistics.put(strenght, strenghtValue);

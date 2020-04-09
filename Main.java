@@ -186,7 +186,7 @@ public class Main {
                 (board.map[player.getX()][player.getY()]).entityList.add(player);
             }
             UserInterface.clearScreen();
-            UserInterface.readBoard(board);
+            UserInterface.readBoard(board, player.getVision(), player.getX(), player.getY());
             
             System.out.println("Life toal = " + player.lives);  
             System.out.println("Ammo = " + player.ammo);          
@@ -216,7 +216,7 @@ public class Main {
         player.setCoordinates(board.LEN/2, board.LEN/2);
         (board.map[player.getX()][player.getY()]).entityList.add(player);
         UserInterface.clearScreen();
-        UserInterface.readBoard(board);
+        UserInterface.readBoard(board, player.getVision(), player.getX(), player.getY());
         System.out.println("Life total = " + player.lives);  
         System.out.println("Ammo = " + player.ammo);  
 
