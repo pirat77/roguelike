@@ -1,9 +1,35 @@
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Arrays;
 
 public class Main {
+
+
+    static Character player = new Character();
+    static Board board = new Board();
+
+    public static void main(String[] args) {
+        UserInterface.welcomeScreen();
+
+        Board.generateBoard(board);
+        player.setCoordinates(board.LEN/2, board.LEN/2);
+        (board.map[player.getX()][player.getY()]).entityList.add(player);
+        UserInterface.clearScreen();
+        UserInterface.readBoard(board, player.getVision(), player.getX(), player.getY());
+        System.out.println("Life total = " + player.lives);  
+        System.out.println("Ammo = " + player.ammo);  
+
+
+        JTextField textField = new JTextField();
+        
+        textField.addKeyListener(new Game());
+
+        JFrame jframe = new JFrame();
+
+        jframe.add(textField);
+        jframe.setSize(5, 5);
+        jframe.setVisible(true);
+    }
 
     private static class Game extends KeyAdapter {
 
@@ -49,39 +75,8 @@ public class Main {
         void shoot(){
             if (player.ammo >0){
                 player.ammo-=1;
-                if (player.getSymbol() == '>'){
-                    int x = player.getX()+1;
-                    while (x < board.LEN){
-                        board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
-                        x++;
-                    }
-                }
-
-                if (player.getSymbol() == '<'){
-                    int x = player.getX()-1;
-                    while (x >= 0){
-                        board.map[x][player.getY()].entityList.removeAll(board.map[x][player.getY()].entityList);
-                        x--;
-                    }
-                }    
-
-                if (player.getSymbol() == '^'){
-                    int y = player.getY()-1;
-                    while (y >= 0){
-                        board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
-                        y--;
-                    }    
-                }
-
-                if (player.getSymbol() == 'v'){
-                    int y = player.getY()+1;
-                    while (y < board.LEN){
-                        board.map[player.getX()][y].entityList.removeAll(board.map[player.getX()][y].entityList);
-                        y++;
-                    }    
-                }   
-            }
-
+            } else return;
+            
             if (player.getSymbol() == '>'){
                 int x = player.getX()+1;
                 while (x < board.LEN){                    
@@ -169,8 +164,9 @@ public class Main {
                         UserInterface.endgameScreen();
                         UserInterface.quitGame();
                     }
-                }               
+                }        
             }
+
             if (board.map[player.getX()][player.getY()].entityList.get(0) instanceof Wearable){
                 player.ammo += 2;
                 board.map[player.getX()][player.getY()].entityList.remove(board.map[player.getX()][player.getY()].entityList.get(0));
@@ -189,7 +185,15 @@ public class Main {
             UserInterface.readBoard(board, player.getVision(), player.getX(), player.getY());
             
             System.out.println("Life toal = " + player.lives);  
-            System.out.println("Ammo = " + player.ammo);          
+            System.out.println("Ammo = " + player.ammo);
+
+            for (Entity enemy : Board.enemys) {
+                if (enemy != null) return;                
+            }
+            Board.generateBoard(board);
+            player.setCoordinates(board.LEN/2, board.LEN/2);
+            (board.map[player.getX()][player.getY()]).entityList.add(player);
+
         }
 
 
@@ -206,30 +210,6 @@ public class Main {
         }
 
 
-    }
-
-    static Character player = new Character();
-    static Board board = new Board();
-
-    public static void main(String[] args) {
-        Board.generateBoard(board);
-        player.setCoordinates(board.LEN/2, board.LEN/2);
-        (board.map[player.getX()][player.getY()]).entityList.add(player);
-        UserInterface.clearScreen();
-        UserInterface.readBoard(board, player.getVision(), player.getX(), player.getY());
-        System.out.println("Life total = " + player.lives);  
-        System.out.println("Ammo = " + player.ammo);  
-
-
-        JTextField textField = new JTextField();
-        
-        textField.addKeyListener(new Game());
-
-        JFrame jframe = new JFrame();
-
-        jframe.add(textField);
-        jframe.setSize(5, 5);
-        jframe.setVisible(true);
     }
 }
 
